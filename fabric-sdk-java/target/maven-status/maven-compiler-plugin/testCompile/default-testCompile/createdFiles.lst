@@ -1,0 +1,11 @@
+org/hyperledger/fabric/sdk/PeerTest.class
+org/hyperledger/fabric/sdk/ClientTest.class
+org/hyperledger/fabric/sdk/End2endJavaChaincodeIT.class
+org/hyperledger/fabric/sdk/EndpointTest.class
+org/hyperledger/fabric/sdk/ChainTest.class
+org/hyperledger/fabric/sdk/security/CryptoPrimitivesTest.class
+org/hyperledger/fabric/sdk/MemberServicesFabricCAImplTest.class
+org/hyperledger/fabric/sdk/OrdererTest.class
+org/hyperledger/fabric/sdk/PeerClientTest.class
+org/hyperledger/fabric/sdk/End2endIT.class
+org/hyperledger/fabric/sdk/SDKUtilTest.class

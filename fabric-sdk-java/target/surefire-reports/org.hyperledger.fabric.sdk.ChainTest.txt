@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.hyperledger.fabric.sdk.ChainTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.403 sec - in org.hyperledger.fabric.sdk.ChainTest
