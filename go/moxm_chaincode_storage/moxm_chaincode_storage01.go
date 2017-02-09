@@ -23,27 +23,26 @@ package main
 //hard-coding.
 
 import (
+	"errors"
 	"fmt"
 
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 )
 
-// SimpleChaincode example simple Chaincode implementation
+// StorageChaincode example simple Chaincode implementation
 type StorageChaincode struct {
 }
 
-func (t *StorageChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
-	fmt.Println("ex02 Init")
+func (t *StorageChaincode) Init(stub shim.ChaincodeStubInterface) ([]byte, error) {
 
-	return shim.Success(nil)
+	return nil, nil
 }
 
-func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
-	fmt.Println("ex02 Invoke")
+func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
 	function, args := stub.GetFunctionAndParameters()
-	if function == "save" {
-		// 存
-		return t.save(stub, args)
+	if function == "put" {
+		// Make payment of X units from A to B
+		return t.put(stub, args)
 	} else if function == "delete" {
 		// Deletes an entity from its state
 		return t.delete(stub, args)
@@ -52,35 +51,36 @@ func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response 
 		return t.query(stub, args)
 	}
 
-	return shim.Error("Invalid invoke function name. Expecting \"invoke\" \"delete\" \"query\"")
+	return nil, errors.New("Invalid invoke function name. Expecting \"put\" \"delete\" \"query\"")
 }
 
 // Transaction makes payment of X units from A to B
-func (t *StorageChaincode) save(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *StorageChaincode) put(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var A string    // Entities
 	var Aval string // Asset holdings
 	var err error
 
 	if len(args) != 2 {
-		return shim.Error("Incorrect number of arguments. Expecting 3")
+		return nil, errors.New("Incorrect number of arguments. Expecting 3")
 	}
 
 	A = args[0]
 	Aval = args[1]
 
+
 	// Write the state back to the ledger
 	err = stub.PutState(A, []byte(Aval))
 	if err != nil {
-		return shim.Error(err.Error())
+		return nil, err
 	}
 
-	return shim.Success(nil)
+	return nil, nil
 }
 
 // Deletes an entity from state
-func (t *StorageChaincode) delete(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *StorageChaincode) delete(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	if len(args) != 1 {
-		return shim.Error("Incorrect number of arguments. Expecting 1")
+		return nil, errors.New("Incorrect number of arguments. Expecting 1")
 	}
 
 	A := args[0]
@@ -88,19 +88,19 @@ func (t *StorageChaincode) delete(stub shim.ChaincodeStubInterface, args []strin
 	// Delete the key from the state in ledger
 	err := stub.DelState(A)
 	if err != nil {
-		return shim.Error("Failed to delete state")
+		return nil, errors.New("Failed to delete state")
 	}
 
-	return shim.Success(nil)
+	return nil, nil
 }
 
 // query callback representing the query of a chaincode
-func (t *StorageChaincode) query(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *StorageChaincode) query(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var A string // Entities
 	var err error
 
 	if len(args) != 1 {
-		return shim.Error("Incorrect number of arguments. Expecting name of the person to query")
+		return nil, errors.New("Incorrect number of arguments. Expecting name of the person to query")
 	}
 
 	A = args[0]
@@ -109,17 +109,17 @@ func (t *StorageChaincode) query(stub shim.ChaincodeStubInterface, args []string
 	Avalbytes, err := stub.GetState(A)
 	if err != nil {
 		jsonResp := "{\"Error\":\"Failed to get state for " + A + "\"}"
-		return shim.Error(jsonResp)
+		return nil, errors.New(jsonResp)
 	}
 
 	if Avalbytes == nil {
-		jsonResp := "{\"Error\":\"Nil amount for " + A + "\"}"
-		return shim.Error(jsonResp)
+		jsonResp := "{\"Error\":\"Nil value for " + A + "\"}"
+		return nil, errors.New(jsonResp)
 	}
 
 	jsonResp := "{\"Key\":\"" + A + "\",\"Value\":\"" + string(Avalbytes) + "\"}"
 	fmt.Printf("Query Response:%s\n", jsonResp)
-	return shim.Success(Avalbytes)
+	return Avalbytes, nil
 }
 
 func main() {
