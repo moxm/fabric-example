@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/chaincode/chaincode.iml" filepath="$PROJECT_DIR$/chaincode/chaincode.iml" />
       <module fileurl="file://$PROJECT_DIR$/fabric-example.iml" filepath="$PROJECT_DIR$/fabric-example.iml" />
       <module fileurl="file://$PROJECT_DIR$/fabric-sdk-java/fabric-sdk-java.iml" filepath="$PROJECT_DIR$/fabric-sdk-java/fabric-sdk-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/go/go.iml" filepath="$PROJECT_DIR$/go/go.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java/chaincode.iml" filepath="$PROJECT_DIR$/java/chaincode.iml" />
     </modules>
   </component>
 </project>

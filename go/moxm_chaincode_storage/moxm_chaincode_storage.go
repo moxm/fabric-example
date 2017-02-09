@@ -63,11 +63,12 @@ func (t *StorageChaincode) save(stub shim.ChaincodeStubInterface, args []string)
 	var Aval string // Asset holdings
 	var err error
 
-	if len(args) != 3 {
+	if len(args) != 2 {
 		return shim.Error("Incorrect number of arguments. Expecting 3")
 	}
 
 	A = args[0]
+	Aval = args[1]
 
 	// Write the state back to the ledger
 	err = stub.PutState(A, []byte(Aval))
@@ -118,7 +119,7 @@ func (t *StorageChaincode) query(stub shim.ChaincodeStubInterface, args []string
 		return shim.Error(jsonResp)
 	}
 
-	jsonResp := "{\"Name\":\"" + A + "\",\"Amount\":\"" + string(Avalbytes) + "\"}"
+	jsonResp := "{\"Key\":\"" + A + "\",\"Value\":\"" + string(Avalbytes) + "\"}"
 	fmt.Printf("Query Response:%s\n", jsonResp)
 	return shim.Success(Avalbytes)
 }

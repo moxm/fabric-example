@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="chaincode" />
         <module name="fabric-sdk-java" />
+        <module name="java" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
       <module name="chaincode" target="1.8" />
       <module name="fabric-example" target="1.8" />
       <module name="fabric-sdk-java" target="1.8" />
+      <module name="java" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
