@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ccc827a2-3b92-48b0-9c70-51a5885decf6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chaincode/build.gradle" afterPath="$PROJECT_DIR$/chaincode/build.gradle" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/TestSample.java" afterPath="$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/TestSample.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -32,11 +32,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chaincode/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+            <state relative-caret-position="272">
+              <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -44,15 +44,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestSample.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestSample.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/TestSample.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#606#607#0" expanded="true" />
-                <element signature="e#641#642#0" expanded="true" />
+                <element signature="e#864#865#0" expanded="true" />
+                <element signature="e#899#900#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -89,8 +89,8 @@
         <option value="$PROJECT_DIR$/chaincode/pom.xml" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/fabric-sdk-java/pom.xml" />
-        <option value="$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/TestSample.java" />
         <option value="$PROJECT_DIR$/chaincode/build.gradle" />
+        <option value="$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/TestSample.java" />
       </list>
     </option>
   </component>
@@ -791,7 +791,7 @@
       <workItem from="1486346059679" duration="5682000" />
       <workItem from="1486435929588" duration="6261000" />
       <workItem from="1486532916144" duration="1903000" />
-      <workItem from="1486605447648" duration="4654000" />
+      <workItem from="1486605447648" duration="6061000" />
     </task>
     <task id="LOCAL-00001" summary="添加TestSample">
       <created>1486609995742</created>
@@ -800,14 +800,21 @@
       <option name="project" value="LOCAL" />
       <updated>1486609995742</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="添加TestSample">
+      <created>1486610722505</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1486610722505</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27106000" />
+    <option name="totallyTimeSpent" value="28513000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="45" y="23" width="1635" height="1027" extended-state="6" />
+    <frame x="45" y="23" width="1635" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1099,18 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/TestSample.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#606#607#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/FirstExample.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="202">
@@ -1121,10 +1116,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chaincode/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="36" column="34" lean-forward="false" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
+        <state relative-caret-position="272">
+          <caret line="47" column="33" lean-forward="false" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chaincode/src/main/java/com/moxm/fabric/example/TestSample.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#864#865#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
           </folding>
         </state>
       </provider>
