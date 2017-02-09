@@ -34,7 +34,7 @@ task printClasspath {
 }
 
 archivesBaseName = "chaincode"
-mainClassName="com.moxm.fabric.example.FirstExample"
+mainClassName="com.moxm.fabric.example.TestSample"
 
 run {
     if (project.hasProperty("appArgs")) {
