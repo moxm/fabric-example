@@ -42,7 +42,7 @@ func (t *StorageChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response {
 func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 	fmt.Println("ex02 Invoke")
 	function, args := stub.GetFunctionAndParameters()
-	if function == "save" {
+	if function == "put" {
 		// 存
 		return t.save(stub, args)
 	} else if function == "delete" {
@@ -53,7 +53,7 @@ func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response 
 		return t.query(stub, args)
 	}
 
-	return shim.Error("Invalid invoke function name. Expecting \"invoke\" \"delete\" \"query\"")
+	return shim.Error("Invalid invoke function name. Expecting \"put\" \"delete\" \"query\"")
 }
 
 // Transaction makes payment of X units from A to B
