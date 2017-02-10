@@ -30,15 +30,15 @@ import (
 )
 
 // StorageChaincode example simple Chaincode implementation
-type StorageChaincode struct {
+type StorageChaincodeV6 struct {
 }
 
-func (t *StorageChaincode) Init(stub shim.ChaincodeStubInterface) ([]byte, error) {
+func (t *StorageChaincodeV6) Init(stub shim.ChaincodeStubInterface) ([]byte, error) {
 
 	return nil, nil
 }
 
-func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
+func (t *StorageChaincodeV6) Invoke(stub shim.ChaincodeStubInterface) ([]byte, error) {
 	function, args := stub.GetFunctionAndParameters()
 	if function == "put" {
 		// Make payment of X units from A to B
@@ -55,7 +55,7 @@ func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) ([]byte, err
 }
 
 // Transaction makes payment of X units from A to B
-func (t *StorageChaincode) put(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *StorageChaincodeV6) put(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var A string    // Entities
 	var Aval string // Asset holdings
 	var err error
@@ -78,7 +78,7 @@ func (t *StorageChaincode) put(stub shim.ChaincodeStubInterface, args []string) 
 }
 
 // Deletes an entity from state
-func (t *StorageChaincode) delete(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *StorageChaincodeV6) delete(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	if len(args) != 1 {
 		return nil, errors.New("Incorrect number of arguments. Expecting 1")
 	}
@@ -95,7 +95,7 @@ func (t *StorageChaincode) delete(stub shim.ChaincodeStubInterface, args []strin
 }
 
 // query callback representing the query of a chaincode
-func (t *StorageChaincode) query(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
+func (t *StorageChaincodeV6) query(stub shim.ChaincodeStubInterface, args []string) ([]byte, error) {
 	var A string // Entities
 	var err error
 
