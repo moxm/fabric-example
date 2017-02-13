@@ -44,7 +44,7 @@ func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response 
 	function, args := stub.GetFunctionAndParameters()
 	if function == "put" {
 		// 存
-		return t.save(stub, args)
+		return t.put(stub, args)
 	} else if function == "delete" {
 		// Deletes an entity from its state
 		return t.delete(stub, args)
@@ -57,7 +57,7 @@ func (t *StorageChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response 
 }
 
 // Transaction makes payment of X units from A to B
-func (t *StorageChaincode) save(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+func (t *StorageChaincode) put(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	var A string    // Entities
 	var Aval string // Asset holdings
 	var err error
