@@ -2,6 +2,8 @@
 ### Maven template
 target/
 */target/
+*/node_modules
+*.log
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
